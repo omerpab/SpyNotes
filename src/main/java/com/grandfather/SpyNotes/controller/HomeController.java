@@ -1,5 +1,7 @@
 package com.grandfather.SpyNotes.controller;
 
+import java.util.UUID;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -56,7 +58,7 @@ public class HomeController
 	}
 	
 	@RequestMapping(value = "/note", method = RequestMethod.GET)
-	public String showNote(Model model, @RequestParam(name = "id") Long id) 
+	public String showNote(Model model, @RequestParam(name = "id") String id) 
 	{		
 		try
 		{

@@ -1,24 +1,25 @@
 package com.grandfather.SpyNotes.model;
 
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "Note")
 public class Note 
 {
 	@Id
-	@Column(name = "id", unique = true, nullable = false)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "note_gen")
-	@SequenceGenerator(name = "note_gen", sequenceName = "note_seq")
-	private long id;
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	private String id;
 	
 	@Column(name = "text", length = 200, nullable = false)
 	private String text;
@@ -38,16 +39,16 @@ public class Note
 		lifeTime = LifeTime.MOMENT;
 	}
 	
-	public void setId(long id)
+	public void setId(String id)
 	{
 		this.id = id;
 	}
 	
-	public long getId()
+	public String getId()
 	{
 		return id;
 	}
-	
+
 	public void setText(String text)
 	{
 		this.text = text;

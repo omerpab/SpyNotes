@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import com.grandfather.SpyNotes.model.Note;
 
 public interface NoteRepository 
-extends CrudRepository<Note, Long>
+extends CrudRepository<Note, String>
 {
 	
 }
