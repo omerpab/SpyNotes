@@ -8,7 +8,8 @@
 <body>
 	<p>Записка создана:</p>
 	<p><textarea th:field="${note.text}" readonly="readonly"></textarea></p>
-	<p><input maxlength="20" size="20" type="url" readonly="readonly" th:value="@{http://localhost:8080/note(id=${note.id})}"/><p>
+	<p><input maxlength="20" size="20" type="url" readonly="readonly" 
+		th:value="@{http://localhost:8080/note/} + ${note.id}"/><p>
 </body>
 </html>
 

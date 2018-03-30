@@ -1,13 +1,12 @@
 package com.grandfather.SpyNotes.controller;
 
-import java.util.UUID;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,8 +56,8 @@ public class HomeController
 		return "redirect:/";
 	}
 	
-	@RequestMapping(value = "/note", method = RequestMethod.GET)
-	public String showNote(Model model, @RequestParam(name = "id") String id) 
+	@RequestMapping(value = "/note/{id}", method = RequestMethod.GET)
+	public String showNote(Model model, @PathVariable(name = "id") String id) 
 	{		
 		try
 		{
