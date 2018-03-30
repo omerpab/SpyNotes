@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Spy Notes | Создание записки</title>
+	<link rel="stylesheet" href="@{/css/style.css}">
+</head>
+<body>
+	<p>Введите текст самоудаляющейся записки:</p>
+	<p><form th:action="@{/}" method="post" th:object="${note}">
+		<textarea th:field="*{text}"></textarea>
+		<p><input type="submit" value="Создать"/><p>
+    </form><p>
+</body>
+</html>

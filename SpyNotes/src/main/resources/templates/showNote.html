@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Spy Notes | Чтение записки</title>
+	<link rel="stylesheet" href="@{/css/style.css}">
+</head>
+<body>
+	<textarea th:field="${note.text}" readonly="readonly"></textarea>
+</body>
+</html>
